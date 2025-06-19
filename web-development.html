@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development - Avyukt 2K25</title>
+    <link rel="stylesheet" href="static/styles1.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Web Development Challenge</h1>
+        </div>
+    </header>
+
+    <section class="event hidden">
+        <h2>Event Overview</h2>
+        <p>Put your web development skills to the test in this exciting competition. Create stunning and functional websites using HTML, CSS, and JavaScript!</p>
+        
+        <h3>Rules & Guidelines</h3>
+        <ul>
+            <li>Participants must build a website based on the given theme.</li>
+            <li>Only **HTML, CSS, JavaScript, and Bootstrap** are allowed.</li>
+            <li>Time limit: **3 hours**.</li>
+            <li>Judging Criteria: Design, responsiveness, creativity, and functionality.</li>
+        </ul>
+
+        <h3>Prizes</h3>
+        <p>🏆 1st Place: ₹5000 | 🥈 2nd Place: ₹3000 | 🥉 3rd Place: ₹2000</p>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHaeoSeUPyC5ZRmZabQU37pS6LIT-2Iq6SxERywnkl1o-tnQ/viewform?usp=header" target="_blank" class="register-btn">Register Now</a>    </section>
+
+    <footer>
+        <p>Follow us for updates:</p>
+        <a href="https://www.instagram.com/pustudentscouncil" target="_blank">
+            <img src="static/images/ig.png" alt="Instagram" class="instagram-icon">
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hiddenElements = document.querySelectorAll(".hidden");
+    
+            function scrollEffect() {
+                let scrollPosition = window.scrollY + window.innerHeight;
+                hiddenElements.forEach((element) => {
+                    let elementPosition = element.offsetTop + element.clientHeight / 3;
+                    
+                    let scrollFactor = (scrollPosition - elementPosition) / window.innerHeight;
+                    
+                    if (scrollFactor > 0) {
+                        let translateValue = Math.max(50 - scrollFactor * 50, 0); 
+                        element.style.transform = `translateY(${translateValue}px)`;
+                        element.style.opacity = Math.min(scrollFactor * 1.2, 1);
+                    }
+                });
+            }
+    
+            window.addEventListener("scroll", scrollEffect);
+            scrollEffect();
+        });
+    </script>
+        
+
+</body>
+</html>

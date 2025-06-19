@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI Tournament - Avyukt 2K25</title>
+    <link rel="stylesheet" href="static/styles1.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>BGMI Tournament</h1>
+            <h2>Unleash your gaming skills in the most thrilling BGMI tournament of the year!</h2>
+        </div>
+    </header>
+
+    <section class="event hidden">
+        <h2>About the Tournament</h2>
+        <p>Experience an adrenaline-pumping battle in the BGMI Tournament! Compete with skilled players, showcase strategic gameplay, and dominate the battleground.</p>
+
+        <h3>Tournament Format</h3>
+        <ul>
+            <li><span>■</span>Point-based format.</li>
+            <li><span>■</span>Classic Squad Mode (4 players per team).</li>
+            <li><span>■</span>Three maps: <b>Miramar, Erangel, Sanhok</b>.</li>
+            <li><span>■</span>Teams must submit player details <b>1 day before</b> the tournament.</li>
+        </ul>
+
+        <h3>📍 Schedule & Venue</h3>
+        <p><b>📅 Date:</b> April 3, 2025 <br>
+           <b>🕑 Time:</b> 09:00 AM - 12:30 PM</p>
+
+        <h3>🏆 Prize Pool & Rewards</h3>
+        <ul>
+            <li><b>🥇 1st Prize:</b> Certificates</li>
+            <li><b>🥈 2nd Prize:</b> Certificates</li>
+            <li><b>🥉 3rd Prize:</b> Certificates</li>
+        </ul>
+
+        <h3>📊 Scoring System</h3>
+        <table>
+            <tr>
+                <th>Placement</th>
+                <th>Points</th>
+            </tr>
+            <tr><td>1st</td><td>15</td></tr>
+            <tr><td>2nd</td><td>12</td></tr>
+            <tr><td>3rd</td><td>10</td></tr>
+            <tr><td>4th</td><td>8</td></tr>
+            <tr><td>5th</td><td>6</td></tr>
+            <tr><td>6th</td><td>4</td></tr>
+            <tr><td>7th</td><td>2</td></tr>
+            <tr><td>8th</td><td>1</td></tr>
+        </table>
+        <p><b>Each kill:</b> +3 points</p>
+
+        <h3>Rules & Conduct</h3>
+<ul class="square-bullets">
+    <li><span>■</span> No cheating, hacking, or exploiting. Immediate disqualification.</li>
+    <li><span>■</span> Sportsmanship is mandatory. Offensive language = -10 points.</li>
+    <li><span>■</span> Technical issues: Players can reconnect during the next match.</li>
+    <li><span>■</span> In case of a tie, a 1v1 TDM match will determine the winner.</li>
+</ul>
+
+
+        <br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHaeoSeUPyC5ZRmZabQU37pS6LIT-2Iq6SxERywnkl1o-tnQ/viewform?usp=header" target="_blank" class="register-btn">Register Now</a>    </section>
+
+    <footer>
+        <p>Follow us for updates:</p>
+        <a href="https://www.instagram.com/pustudentscouncil" target="_blank">
+            <img src="static/images/ig.png" alt="Instagram" class="instagram-icon">
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hiddenElements = document.querySelectorAll(".hidden");
+    
+            function scrollEffect() {
+                let scrollPosition = window.scrollY + window.innerHeight;
+                hiddenElements.forEach((element) => {
+                    let elementPosition = element.offsetTop + element.clientHeight / 3;
+                    
+                    let scrollFactor = (scrollPosition - elementPosition) / window.innerHeight;
+                    
+                    if (scrollFactor > 0) {
+                        let translateValue = Math.max(50 - scrollFactor * 50, 0); 
+                        element.style.transform = `translateY(${translateValue}px)`;
+                        element.style.opacity = Math.min(scrollFactor * 1.2, 1);
+                    }
+                });
+            }
+    
+            window.addEventListener("scroll", scrollEffect);
+            scrollEffect();
+        });
+    </script>
+        
+
+</body>
+</html>

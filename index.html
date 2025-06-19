@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avyukt Tech Fest 2K25</title>
+    <link rel="stylesheet" href="static/styles1.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo left-logo">
+                <img src="static/images/logo.jpg" alt="Left Logo">
+            </div>
+            <div class="title">
+                <h1>AVYUKT 2K25</h1>
+                <p>Presented by the Technical Committee of the Students' Council</p>
+                <h2>Date - April 3, 2025</h2>
+            </div>
+            <div class="logo right-logo">
+                <img src="static/images/council_logo.jpg" alt="Right Logo">
+            </div>
+        </div>
+    </header>
+
+    <section class="events hidden">
+        <h2>Events</h2>
+        <div class="event-grid">
+            <a href="web-development.html" class="event-btn">Web Development</a>
+            <a href="bgmi.html" class="event-btn">BGMI</a>
+            <a href="tech-quiz.html" class="event-btn">Tech Quiz</a>
+            <a href="canva-poster.html" class="event-btn">Canva Poster Design</a>
+            <a href="brand-university.html" class="event-btn">Brand Your University</a>
+        </div>
+    </section>
+
+    <section class="about hidden">
+        <h2>About Avyukt 2K25</h2>
+        <p>Avyukt 2K25 is a tech fest that brings together students to compete, innovate, and showcase their technical skills. 
+           From "web development challenges" to "tech quizzes and gaming tournaments", it's a perfect platform to 
+           "learn, collaborate, and win exciting prizes!"</p>
+    </section>
+
+    <section class="highlights hidden">
+        <h2>Why Attend?</h2>
+        <ul>
+            <li>⚡ Compete in "exciting tech challenges" like coding, designing, and gaming.</li>
+            <li>🚀 Showcase your talent in "Web Development, Tech Quiz, and Poster Designing".</li>
+            <li>🏆 "Win prizes" and gain recognition among peers and industry experts.</li>
+            <li>🎤 "Guest Speaker Sessions" to enhance your knowledge.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Join us for an exciting day of innovation and creativity!</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/pustudentscouncil?igsh=MTVqN3V2ZDk2Yno1Ng==" target="_blank">
+                <img src="static/images/ig.png" alt="Instagram" class="instagram-icon">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hiddenElements = document.querySelectorAll(".hidden");
+
+        function scrollEffect() {
+            let scrollPosition = window.scrollY + window.innerHeight;
+            hiddenElements.forEach((element) => {
+                let elementPosition = element.offsetTop + element.clientHeight / 3;
+                
+                let scrollFactor = (scrollPosition - elementPosition) / window.innerHeight;
+                
+                if (scrollFactor > 0) {
+                    let translateValue = Math.max(50 - scrollFactor * 50, 0); 
+                    element.style.transform = `translateY(${translateValue}px)`;
+                    element.style.opacity = Math.min(scrollFactor * 1.2, 1);
+                }
+            });
+        }
+
+        window.addEventListener("scroll", scrollEffect);
+        scrollEffect();
+    });
+</script>
+
+    
+
+</body>
+</html>

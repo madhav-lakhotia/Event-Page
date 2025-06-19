@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Quiz Challenge</title>
+    <link rel="stylesheet" href="static/styles1.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Tech Quiz Challenge</h1>
+        </div>
+    </header>
+
+    <section class="event hidden">
+        <h2>About the Quiz</h2>
+        <p>The Tech Quiz Challenge is a thrilling competition designed to test participants' knowledge of technology, software, hardware, and current trends in the tech industry.</p>
+
+        <h3>General Rules</h3>
+        <ul>
+            <li>★ Teams must consist of <b>2 participants</b> each.</li>
+            <li>★ Participants cannot discuss answers with other teams.</li>
+            <li>★ In case of a dispute, the <b>coordinator's decision is final</b>.</li>
+            <li>★ In case of a tie, a <b>bonus tiebreaker challenge</b> will be conducted.</li>
+            <li>★ The quiz consists of <b>3 rounds</b>.</li>
+        </ul>
+
+        <div class="quiz-container">
+            <!-- Round 1 -->
+            <div class="quiz-round round1">
+                <h3>📍 Round 1: Technical Questions</h3>
+                <ul>
+                    <li>★ Each correct answer: <b>+3 points</b>.</li>
+                    <li>★ Incorrect answer: <b>-2 points</b>.</li>
+                    <li>★ If all teams fail, <b>4 options</b> will be given. Correct answer: <b>+2 points</b>.</li>
+                    <li>★ If a team raises their hand but <b>fails to answer in 10 seconds</b>: <b>-1 point</b>.</li>
+                    <li>★ <b>10 teams will be eliminated</b> in this round.</li>
+                </ul>
+            </div>
+
+            <!-- Round 2 -->
+            <div class="quiz-round round2">
+                <h3>📍 Round 2: Who Am I?</h3>
+                <ul>
+                    <li>★ Participants identify a <b>tech personality</b> using clues.</li>
+                    <li>★ Answering after <b>1st clue</b>: <b>+5 points</b>.</li>
+                    <li>★ Points decrease after each additional clue.</li>
+                    <li>★ Last clue answer: <b>+1 point</b>.</li>
+                    <li>★ Incorrect answer: <b>-2 points</b>.</li>
+                    <li>★ Failing to answer after buzzing: <b>-1 point</b>.</li>
+                    <li>★ <b>4 teams will be eliminated</b> in this round.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Round 3 -->
+        <div class="quiz-round round3">
+            <h3>📍 Round 3: Rapid Fire</h3>
+            <ul>
+                <li>★ <b>2 minutes</b> per team to answer as many questions as possible.</li>
+                <li>★ Correct answer: <b>+1 point</b>.</li>
+                <li>★ Incorrect answer: <b>-1 point</b>.</li>
+                <li>★ Teams can <b>say "Skip"</b> to move to the next question.</li>
+                <li>★ <b>The team with the highest score wins</b>.</li>
+            </ul>
+        </div>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHaeoSeUPyC5ZRmZabQU37pS6LIT-2Iq6SxERywnkl1o-tnQ/viewform?usp=header" target="_blank" class="register-btn">Register Now</a>    </section>
+
+    <footer>
+        <p>Follow us for updates:</p>
+        <a href="https://www.instagram.com/pustudentscouncil" target="_blank">
+            <img src="static/images/ig.png" alt="Instagram" class="instagram-icon">
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hiddenElements = document.querySelectorAll(".hidden");
+    
+            function scrollEffect() {
+                let scrollPosition = window.scrollY + window.innerHeight;
+                hiddenElements.forEach((element) => {
+                    let elementPosition = element.offsetTop + element.clientHeight / 3;
+                    
+                    let scrollFactor = (scrollPosition - elementPosition) / window.innerHeight;
+                    
+                    if (scrollFactor > 0) {
+                        let translateValue = Math.max(50 - scrollFactor * 50, 0); 
+                        element.style.transform = `translateY(${translateValue}px)`;
+                        element.style.opacity = Math.min(scrollFactor * 1.2, 1);
+                    }
+                });
+            }
+    
+            window.addEventListener("scroll", scrollEffect);
+            scrollEffect();
+        });
+    </script>
+        
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva Poster Making - Avyukt 2K25</title>
+    <link rel="stylesheet" href="static/styles1.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Canva Poster Making</h1>
+        </div>
+    </header>
+
+    <section class="event hidden">
+        <h2>About the Event</h2>
+        <p>The Canva Poster Making competition invites participants to unleash their creativity and showcase artistic ingenuity by designing posters using Canva.</p>
+
+        <h3>Rules & Guidelines</h3>
+        <ul class="star-bullets">
+            <li>⭐ Participants will compete **individually**.</li>
+            <li>⭐ Topics will be **revealed on the spot** via a chit system.</li>
+            <li>⭐ **30 minutes** will be given to complete the poster.</li>
+            <li>⭐ Posters must be created **exclusively using Canva**.</li>
+            <li>⭐ The winner will be decided based on **creativity, uniqueness, and design quality**.</li>
+            <li>⭐ **Copying or stealing** work will result in **immediate disqualification**.</li>
+        </ul>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHaeoSeUPyC5ZRmZabQU37pS6LIT-2Iq6SxERywnkl1o-tnQ/viewform?usp=header" target="_blank" class="register-btn">Register Now</a>    </section>
+
+    <footer>
+        <p>Follow us for updates:</p>
+        <a href="https://www.instagram.com/pustudentscouncil" target="_blank">
+            <img src="static/images/ig.png" alt="Instagram" class="instagram-icon">
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hiddenElements = document.querySelectorAll(".hidden");
+    
+            function scrollEffect() {
+                let scrollPosition = window.scrollY + window.innerHeight;
+                hiddenElements.forEach((element) => {
+                    let elementPosition = element.offsetTop + element.clientHeight / 3;
+                    
+                    let scrollFactor = (scrollPosition - elementPosition) / window.innerHeight;
+                    
+                    if (scrollFactor > 0) {
+                        let translateValue = Math.max(50 - scrollFactor * 50, 0); 
+                        element.style.transform = `translateY(${translateValue}px)`;
+                        element.style.opacity = Math.min(scrollFactor * 1.2, 1);
+                    }
+                });
+            }
+    
+            window.addEventListener("scroll", scrollEffect);
+            scrollEffect();
+        });
+    </script>
+    
+    
+
+</body>
+</html>
